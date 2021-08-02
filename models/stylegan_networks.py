@@ -716,7 +716,10 @@ class StyleGAN2Discriminator(nn.Module):
             1024: int(16 * channel_multiplier),
         }
 
-        convs = [ConvLayer(3, channels[size], 1)]
+        if self.opt.input_nc == self.opt.output_nc == 1:
+            convs = [ConvLayer(1, channels[size], 1)]
+        else:
+            convs = [ConvLayer(3, channels[size], 1)]
 
         log_size = int(math.log(size, 2))
 
