@@ -69,6 +69,9 @@ class BaseOptions():
                             default=1, type=int,
                             help='Number of downsampling layers used by StyleGAN2Generator')
 
+        # cyclegan related options
+        parser.add_argument('--amp', type=util.str2bool, default=False, help='enables or disables automatic mixed precision')
+
         self.initialized = True
         return parser
 

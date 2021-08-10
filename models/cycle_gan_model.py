@@ -190,8 +190,8 @@ class CycleGANModel(BaseModel):
         else:
             self.loss_G.backward()
 
-    def data_dependent_initialize(self):
-        return
+    def data_dependent_initialize(self, data):
+        pass
 
     def generate_visuals_for_evaluation(self, data, mode):
         with torch.no_grad():
