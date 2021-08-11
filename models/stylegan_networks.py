@@ -359,7 +359,7 @@ class NoiseInjection(nn.Module):
             noise = image.new_empty(batch, 1, height, width).normal_()
 
         # return image + self.weight * noise
-        return image + 0.1 * noise
+        return image + 0.001 * noise
 
 
 class ConstantInput(nn.Module):
