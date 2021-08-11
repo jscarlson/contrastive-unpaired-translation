@@ -359,6 +359,7 @@ class NoiseInjection(nn.Module):
             noise = image.new_empty(batch, 1, height, width).normal_()
             print("Noise has been added!")
             print(noise)
+            print(self.weight)
 
         return image + self.weight * noise
 
